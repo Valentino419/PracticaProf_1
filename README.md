@@ -1,66 +1,107 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# PracticaProf_1
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# PracticaProf_1
+estado: casi terminado
 
-## About Laravel
+## Descripción
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+PracticaProf_1 es una aplicación quepermite gestionar el despliegue de maquinarias de construcción a nivel nacional. perimite llevar registro de las obras asi como los mantenimientos de las mismas y un cronograma de trabajos. Este proyecto está diseñado para empresas de construccion.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Requisitos
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Para ejecutar este proyecto, asegúrate de cumplir con los siguientes requisitos:
 
-## Learning Laravel
+- **PHP**: 8.1 o superior (compatible con Laravel 11).
+- **Composer**: 2.2 o superior.
+- **Node.js y NPM** (opcional, para herramientas de frontend como Laravel Mix o Vite).
+- **Base de datos**: MySQL 5.7+, PostgreSQL, SQLite, u otra compatible con Laravel.
+- **Extensiones de PHP**:
+  - BCMath
+  - Ctype
+  - Fileinfo
+  - JSON
+  - Mbstring
+  - OpenSSL
+  - PDO
+  - Tokenizer
+  - XML
+- **Herd**: Última versión compatible con Laravel (disponible para macOS y Windows).
+- **Sistema operativo**: Windows, macOS o Linux (Herd es compatible con macOS y Windows; para Linux, considera Docker o LAMP/LEMP).
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Instalación
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Sigue estos pasos para configurar y ejecutar el proyecto:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. **Instalar Herd**:
+   - Descarga e instala Herd desde [https://herd.laravel.com/](https://herd.laravel.com/).
+   - Configura Herd para gestionar PHP y Composer (asegúrate de usar PHP 8.1+).
+   - Opcionalmente, utiliza el servidor Nginx de Herd o el servidor de desarrollo de Laravel.
 
-## Laravel Sponsors
+2. **Instalar Laravel Installer**:
+   - Ejecuta en la terminal:
+     ```bash
+     composer global require laravel/installer:5.14.0
+     ```
+   - Asegúrate de que el directorio de Composer esté en tu PATH para usar el comando `laravel`.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+3. **Clonar o crear el proyecto**:
+   - Para un nuevo proyecto:
+     ```bash
+     laravel new nombre-del-proyecto
+     ```
+   - Para un proyecto existente:
+     ```bash
+     git clone <url-del-repositorio>
+     cd nombre-del-proyecto
+     ```
 
-### Premium Partners
+4. **Instalar dependencias**:
+   - Dentro del directorio del proyecto:
+     ```bash
+     composer install
+     ```
+   - Si usas frontend:
+     ```bash
+     npm install
+     npm run dev
+     ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+5. **Configurar el entorno**:
+   - Copia el archivo de entorno:
+     ```bash
+     cp .env.example .env
+     ```
+   - Edita `.env` para configurar la base de datos (por ejemplo, `DB_HOST`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`).
+   - Genera la clave de la aplicación:
+     ```bash
+     php artisan key:generate
+     ```
 
-## Contributing
+6. **Ejecutar migraciones y seeders** (si aplica):
+   - Crea las tablas en la base de datos:
+     ```bash
+     php artisan migrate
+     ```
+   - Opcionalmente, puebla la base de datos:
+     ```bash
+     php artisan db:seed
+     ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+7. **Ejecutar el proyecto con Herd**:
+   - Coloca el proyecto en la carpeta configurada de Herd (por defecto, `~/Herd` en macOS).
+   - Herd servirá el proyecto automáticamente en una URL local (por ejemplo, `http://nombre-del-proyecto.test`).
+   - Alternativamente, usa el servidor de desarrollo de Laravel:
+     ```bash
+     php artisan serve
+     ```
+     Esto inicia el servidor en `http://localhost:8000`.
 
-## Code of Conduct
+8. **Verificar la instalación**:
+   - Abre el navegador y visita la URL de Herd o `http://localhost:8000` para confirmar que el proyecto funciona.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Notas adicionales
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Si usas Herd y el dominio `.test` no funciona, verifica la configuración con `herd links`.
+- Confirma que las extensiones de PHP estén habilitadas:
+  ```bash
+  php -m
