@@ -1,6 +1,4 @@
 # PracticaProf_1
-
-# PracticaProf_1
 estado: casi terminado
 
 ## Descripción
